@@ -1,3 +1,4 @@
+// Nick Adams : Lab 2
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -23,7 +24,8 @@ public class EventTester
     static Meeting lastMeeting = new Meeting("Last Meeting", start.plusDays(4), end.plusDays(4), location);
     static Meeting midMeeting = new Meeting("Middle Meeting", start.plusDays(2), end.plusDays(2), location);
 
-    static Event[] events = new Event[] {
+    static Event[] events = new Event[]
+    {
             midDeadline,
             lastMeeting,
             lastDeadline,
@@ -32,19 +34,22 @@ public class EventTester
             midMeeting,
     };
 
-    static Deadline[] deadlines = new Deadline[] {
+    static Deadline[] deadlines = new Deadline[]
+     {
             firstDeadline,
             midDeadline,
             lastDeadline,
-    };
+     };
 
-    static Meeting[] meetings = new Meeting[] {
+    static Meeting[] meetings = new Meeting[]
+    {
             firstMeeting,
             midMeeting,
             lastMeeting,
     };
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         System.out.println("Testing Getters..." + (testGetters()? "passed" : "failed"));
         System.out.println("Testing Setters..." + (testSetters()? "passed" : "failed"));
         System.out.println("Testing implements Comparable..." + (testComparingEvents()? "passed" : "failed"));
@@ -52,7 +57,8 @@ public class EventTester
         System.out.println("Testing implements Completable..." + (testCompletable()? "passed" : "failed"));
     }
 
-    public static boolean testGetters() {
+    public static boolean testGetters()
+    {
         return (
                 lastDeadline.getName().equals(lastDeadlineName)
                         && lastDeadline.getDateTime().equals(deadline)
@@ -61,7 +67,8 @@ public class EventTester
         );
     }
 
-    public static boolean testSetters() {
+    public static boolean testSetters()
+    {
         // try using the Setters.
         lastDeadline.setName(lastDeadlineNameAlt);
         lastDeadline.setDateTime(deadline.minusDays(INCREMENT));
@@ -85,7 +92,8 @@ public class EventTester
         return passed;
     }
 
-    public static boolean testComparingEvents() {
+    public static boolean testComparingEvents()
+    {
         Arrays.sort(events);
 
         return (
@@ -98,20 +106,24 @@ public class EventTester
         );
     }
 
-    public static boolean testMeetingDuration() {
+    public static boolean testMeetingDuration()
+    {
         // duration of meeting should be one hour
         Duration duration1 =  firstMeeting.getDuration();
         Duration duration2 = Duration.ofHours(1);
         return duration1.equals(duration2);
     }
 
-    public static boolean testCompletable() {
+    public static boolean testCompletable()
+    {
         // complete all the deadlines
-        for (Deadline deadline : deadlines) {
+        for (Deadline deadline : deadlines)
+        {
             deadline.complete();
         }
         // complete all the meetings
-        for (Meeting meeting : meetings) {
+        for (Meeting meeting : meetings)
+        {
             meeting.complete();
         }
         // check that the deadlines are complete
