@@ -6,9 +6,10 @@ public class Deadline extends Event implements Completable
 {
     boolean complete; // tracks completion status of a task from a Deadline or Meeting object
 
+    // constructor
     public Deadline(String name, LocalDateTime deadline)
     {
-        super(name, deadline);
+        super(name, deadline); // call the Event constructor and set name and deadline
     }
 
     @Override
@@ -18,14 +19,14 @@ public class Deadline extends Event implements Completable
     }
 
 
-  // will change the state of a Completable object to true
+  // marks task as complete
     @Override
     public void complete()
     {
     this.complete = true;
     }
 
-    // used to retrieve the completion status of a Completable object
+    // used to retrieve the completion status
     @Override
     public boolean isComplete()
     {

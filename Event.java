@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public abstract class Event implements Comparable<Event>
 {
-    // members of the  class
+    // variables to store the event name and date, time
     String name;
     LocalDateTime dateTime;
 
@@ -21,7 +21,7 @@ public abstract class Event implements Comparable<Event>
         return dateTime;
     }
 
-    public abstract String getName(); // abstract methods cannot have a body
+    public abstract String getName(); // abstract methods cannot have a body, implemented in Meeting
 
     public void setDateTime(LocalDateTime dateTime)
     {

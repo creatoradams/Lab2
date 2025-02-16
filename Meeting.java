@@ -33,7 +33,7 @@ public class Meeting extends Event implements Completable // inherits Event and 
         this.endDateTime = end;
     }
 
-    // calculate the duration, imported Duration class
+    // calculate the duration, imported Duration class above
     public Duration getDuration()
     {
         return Duration.between(dateTime, endDateTime); // calc time between start and end
@@ -51,18 +51,21 @@ public class Meeting extends Event implements Completable // inherits Event and 
         this.location = location;
     }
 
+    // return name of meeting
     @Override
     public String getName()
     {
         return name;
     }
 
+    // marks meeting as  complete
     @Override
     public void complete()
     {
         this.complete = true;
     }
 
+    // checks if meeting is complete
     @Override
     public boolean isComplete()
     {
