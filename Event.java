@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 public abstract class Event implements Comparable<Event>
 {
     // variables to store the event name and date, time
-    String name;
-    LocalDateTime dateTime;
+    private String name;
+    private LocalDateTime dateTime;
 
     // create constructor
     public Event(String name, LocalDateTime dateTime)
